@@ -2,7 +2,6 @@
   "name": "newtabbookmarks",
   "description": "A Google Chrome browser extension to display all bookmarks on opening new tab",
   "version": "1.0.0",
-  "main": "dist/background.js",
   "directories": {
     "lib": "lib"
   },
