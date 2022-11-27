@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Bookmarks on New Tab",
+  "description": "A Google Chrome browser extension to show all your bookmarks on opening new tab.",
+  "version": "1.0",
+  "icons": {
+    "16": "./images/webcoloured16.png",
+    "32": "./images/webcoloured32.png",
+    "50": "./images/iconcoloured50.png",
+    "96": "./images/webcoloured96.png",
+    "100": "./images/iconcoloured100.png"
+  },
+  "background": {
+    "service_worker": "./dist/background.js"
+  },
+  "permissions": [
+    "bookmarks"
+  ]
+}
