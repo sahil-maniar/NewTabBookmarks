@@ -75,6 +75,18 @@ events.forEach(function (event) {
     event.addListener(updateBookmarksVariable);
 });
 
+browserVariable.action.onClicked.addListener(function (tab) {
+    browserVariable.tabs.create({url: "dist/bookmarks.html"});
+});
+
+browserVariable.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    const { type } = message;
+    if (type === "bookmarks") {
+        sendResponse(cachedHtml);
+    }
+    return;
+});
+
 (function init() {
     updateBookmarksVariable();
 })();

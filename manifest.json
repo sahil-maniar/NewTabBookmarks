@@ -25,7 +25,5 @@
       "description": "Show Bookmarks"
     }
   },
-  "chrome_url_overrides": {
-    "newtab": "./dist/newtab.html"
-  }
+  "action": {}
 }
