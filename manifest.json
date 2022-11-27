@@ -14,15 +14,18 @@
     "service_worker": "./dist/background.js"
   },
   "permissions": [
-    "bookmarks"
+    "bookmarks",
+    "tabs"
   ],
   "commands": {
-    "clog": {
+    "showBookmarks": {
       "suggested_key": {
-        "default": "Ctrl+Alt+Shift+B",
-        "mac": "Command+Alt+Shift+B"
+        "default": "Ctrl+Shift+1"
       },
-      "description": "Run \"foo\" on the current page."
+      "description": "Show Bookmarks"
     }
+  },
+  "chrome_url_overrides": {
+    "newtab": "./dist/newtab.html"
   }
 }

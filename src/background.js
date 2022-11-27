@@ -14,6 +14,8 @@ const
  */
 let cachedAssets = [];
 
+let cachedHtml = "";
+
 function updateBookmarksVariable() {
     /**
      * @type BookmarkTreeNode[]
@@ -29,6 +31,9 @@ function updateBookmarksVariable() {
         })
         .finally(() => {
             cachedAssets = adapter.getAssets(bookmarks);
+            if (cachedAssets.length > 0) {
+                cachedHtml = render(cachedAssets[0]);
+            }
         });
 }
 
@@ -52,8 +57,22 @@ function render(node) {
 }
 
 browserVariable.commands.onCommand.addListener((command) => {
-    console.log(cachedAssets);
-    console.log(render(cachedAssets[0]));
+    if (command === "showBookmarks") {
+        console.log(cachedHtml);
+    }
+});
+
+let events = [
+    browserVariable.bookmarks.onChanged,
+    browserVariable.bookmarks.onMoved,
+    browserVariable.bookmarks.onCreated,
+    browserVariable.bookmarks.onRemoved,
+    browserVariable.bookmarks.onChildrenReordered,
+    browserVariable.bookmarks.onImportEnded
+];
+
+events.forEach(function (event) {
+    event.addListener(updateBookmarksVariable);
 });
 
 (function init() {
