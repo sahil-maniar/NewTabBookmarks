@@ -15,5 +15,14 @@
   },
   "permissions": [
     "bookmarks"
-  ]
+  ],
+  "commands": {
+    "clog": {
+      "suggested_key": {
+        "default": "Ctrl+Alt+Shift+B",
+        "mac": "Command+Alt+Shift+B"
+      },
+      "description": "Run \"foo\" on the current page."
+    }
+  }
 }

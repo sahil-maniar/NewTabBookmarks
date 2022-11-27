@@ -6,10 +6,11 @@ The child in children, if non leaf node, should have it's own {title: "...", chi
 render should be the name of the partial, that has this same template code.
 --}}
 <div class="row border p-3 m-3">
-
-    <div class="col-sm-1 gy-3">
-        <div class="btn btn-primary btn-lg p-3 border disabled">{{title}}</div>
-    </div>
+    {{#title}}
+        <div class="col-sm-1 gy-3">
+            <div class="btn btn-primary btn-lg p-3 border disabled">{{title}}</div>
+        </div>
+    {{/title}}
 
     {{#children}}
         {{^children.length}}

@@ -38,7 +38,7 @@ function updateBookmarksVariable() {
  * @param {NodeType} node
  */
 function render(node) {
-    if (!node.title || !node.children || !node.children.length) {
+    if (!node.children || !node.children.length) {
         return ""
     }
 
@@ -50,11 +50,11 @@ function render(node) {
         }
     );
 }
-setTimeout(
-    function (){
-        console.log(render(cachedAssets[0]));
-    }, 3000
-)
+
+browserVariable.commands.onCommand.addListener((command) => {
+    console.log(cachedAssets);
+    console.log(render(cachedAssets[0]));
+});
 
 (function init() {
     updateBookmarksVariable();
