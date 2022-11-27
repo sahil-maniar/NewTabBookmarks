@@ -58,7 +58,7 @@ function render(node) {
 
 browserVariable.commands.onCommand.addListener((command) => {
     if (command === "showBookmarks") {
-        console.log(cachedHtml);
+        browserVariable.tabs.create({url: "dist/bookmarks.html"});
     }
 });
 
