@@ -15,7 +15,7 @@ render should be the name of the partial, that has this same template code.
     {{#children}}
         {{^children.length}}
             <div class="col-sm-1 gy-3">
-                <a href="{{{url}}}" class="btn btn-default btn-lg p-3 border" role="button">{{title}}</a>
+                <a href="{{{url}}}" target="_blank" class="btn btn-default btn-lg p-3 border" role="button">{{title}}</a>
             </div>
         {{/children.length}}
         {{#children.length}}
